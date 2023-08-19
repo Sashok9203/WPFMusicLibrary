@@ -12,8 +12,28 @@
     <Window.DataContext>
         <vms:MusicDBContext/>
     </Window.DataContext>
+    <TabControl>
+        <TabItem Header="Trecks">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <DataGrid Grid.Row="0" ItemsSource="{Binding Path=TrecksView}" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Artist name" Binding="{Binding Artist}" Width="*" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Treck name" Binding="{Binding Track}" Width="*" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Duration" Binding="{Binding Duration}" Width="*" IsReadOnly="True"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button Grid.Row="1" Content="Add Artist" Width="60" Margin="5" HorizontalAlignment="Right"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Albums">
+            
+        </TabItem>
+         <TabItem Header="Play Lists">
 
-    <DataGrid ItemsSource="{Binding Path=TrecksView}" >
-        
-    </DataGrid>
+        </TabItem>
+    </TabControl>
 </Window>
