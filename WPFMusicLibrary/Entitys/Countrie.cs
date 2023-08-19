@@ -11,5 +11,7 @@ namespace WPFMusicLibrary.Entitys
         public int Id { get; set; }
 
         public string Name { get; set; }
+
+        public ICollection< Artist> Artists { get; set; }  = new HashSet< Artist>();
     }
 }

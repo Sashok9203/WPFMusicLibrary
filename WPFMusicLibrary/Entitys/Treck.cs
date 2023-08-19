@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,16 +13,16 @@ namespace WPFMusicLibrary.Entitys
 
         public string Name { get; set; }
 
-        public int AlbomId { get; set; }
+        public int AlbumId { get; set; }
 
-        public Album Albom { get; set; }
+        public Album Album { get; set; }
 
-        public int ArtisId { get; set; }
+        public int? ArtistId { get; set; }
 
-        public Artist Artis { get; set; }
+        public Artist Artist { get; set; }
 
         public TimeSpan Duration { get; set; }
 
-        public ICollection<PlayList> PlayLists { get; set; }
+        public ICollection<PlayList> PlayLists { get; set; } = new HashSet<PlayList>();
     }
 }

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPFMusicLibrary.Data;
+using WPFMusicLibrary.Entitys;
 
 namespace WPFMusicLibrary
 {
@@ -24,11 +25,6 @@ namespace WPFMusicLibrary
         public MainWindow()
         {
             InitializeComponent();
-            using (MusicDBContext mdb = new())
-            {
-                mdb.SaveChanges();
-            }
-
         }
     }
 }

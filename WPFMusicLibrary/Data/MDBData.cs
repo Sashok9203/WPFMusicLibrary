@@ -57,58 +57,69 @@ namespace WPFMusicLibrary.Data
 
         public readonly static Treck[] TrecksData =
         {
-            new Treck(){ Id = 1,ArtisId = 1, Name = "Wild Dances" ,AlbomId = 1 ,Duration = new(0,3,10)},
-            new Treck(){ Id = 2,ArtisId = 1, Name = "Heart on Fire" ,AlbomId = 1,Duration = new(0,4,20)},
-            new Treck(){ Id = 3,ArtisId = 1, Name = "Dance with the Wolves" ,AlbomId = 1,Duration = new(0,2,56)},
-            new Treck(){ Id = 4,ArtisId = 1, Name = "Shooting Star" ,AlbomId = 1,Duration = new(0,4,1)},
-            new Treck(){ Id = 5,ArtisId = 1, Name = "The Same Star",AlbomId = 1,Duration = new(0,4,49)},
+            new Treck(){ /*Id = 1,*/ArtistId = 1, Name = "Wild Dances" ,AlbumId = 1 ,Duration = new(0,3,10)},
+            new Treck(){ /*Id = 2,*/ArtistId = 1, Name = "Heart on Fire" ,AlbumId = 1,Duration = new(0,4,20)},
+            new Treck(){ /*Id = 3,*/ArtistId = 1, Name = "Dance with the Wolves" ,AlbumId = 1,Duration = new(0,2,56)},
+            new Treck(){ /*Id = 4,*/ArtistId = 1, Name = "Shooting Star" ,AlbumId = 1,Duration = new(0,4,1)},
+            new Treck(){ /*Id = 5,*/ArtistId = 1, Name = "The Same Star",AlbumId = 1,Duration = new(0,4,49)},
 
-            new Treck(){ Id = 6,ArtisId = 2, Name = "Bohemian Rhapsody" ,AlbomId = 2 ,Duration = new(0,2,50)},
-            new Treck(){ Id = 7,ArtisId = 2, Name = "Don't Stop Me Now" ,AlbomId = 2,Duration = new(0,4,00)},
-            new Treck(){ Id = 8,ArtisId = 2, Name = "Somebody to Love" ,AlbomId = 2,Duration = new(0,3,33)},
-            new Treck(){ Id = 9,ArtisId = 2, Name = "We Will Rock You" ,AlbomId = 2,Duration = new(0,5,1)},
-            new Treck(){ Id = 10,ArtisId = 2, Name = "Radio Ga Ga",AlbomId = 2,Duration = new(0,3,49)},
+            new Treck(){ /*Id = 6,*/ArtistId = 2, Name = "Bohemian Rhapsody" ,AlbumId = 2 ,Duration = new(0,2,50)},
+            new Treck(){ /*Id = 7,*/ArtistId = 2, Name = "Don't Stop Me Now" ,AlbumId = 2,Duration = new(0,4,00)},
+            new Treck(){ /*Id = 8,*/ArtistId = 2, Name = "Somebody to Love" ,AlbumId = 2,Duration = new(0,3,33)},
+            new Treck(){ /*Id = 9,*/ArtistId = 2, Name = "We Will Rock You" ,AlbumId = 2,Duration = new(0,5,1)},
+            new Treck(){ /*Id = 10,*/ArtistId = 2, Name = "Radio Ga Ga",AlbumId = 2,Duration = new(0,3,49)},
 
-            new Treck(){ Id = 11,ArtisId = 3, Name = "Praise Abort" ,AlbomId = 3 ,Duration = new(0,3,50)},
-            new Treck(){ Id = 12,ArtisId = 3, Name = "Steh auf" ,AlbomId = 3,Duration = new(0,3,00)},
-            new Treck(){ Id = 13,ArtisId = 3, Name = "Skills in Pills" ,AlbomId = 3,Duration = new(0,4,33)},
-            new Treck(){ Id = 14,ArtisId = 3, Name = "Fish On" ,AlbomId = 3,Duration = new(0,4,1)},
-            new Treck(){ Id = 15,ArtisId = 3, Name = "Knebel",AlbomId = 3,Duration = new(0,3,49)},
+            new Treck(){ /*Id = 11,*/ArtistId = 3, Name = "Praise Abort" ,AlbumId = 3 ,Duration = new(0,3,50)},
+            new Treck(){ /*Id = 12,*/ArtistId = 3, Name = "Steh auf" ,AlbumId = 3,Duration = new(0,3,00)},
+            new Treck(){ /*Id = 13,*/ArtistId = 3, Name = "Skills in Pills" ,AlbumId = 3,Duration = new(0,4,33)},
+            new Treck(){ /*Id = 14,*/ArtistId = 3, Name = "Fish On" ,AlbumId = 3,Duration = new(0,4,1)},
+            new Treck(){ /*Id = 15,*/ArtistId = 3, Name = "Knebel",AlbumId = 3,Duration = new(0,3,49)},
 
-            new Treck(){ Id = 16,ArtisId = 4, Name = "Time to Say Goodbye" ,AlbomId = 4 ,Duration = new(0,4,30)},
-            new Treck(){ Id = 17,ArtisId = 4, Name = "I Live for Her" ,AlbomId = 4,Duration = new(0,5,23)},
-            new Treck(){ Id = 18,ArtisId = 4, Name = "The Prayer" ,AlbomId = 4,Duration = new(0,6,3)},
-            new Treck(){ Id = 19,ArtisId = 4, Name = "I Will Fly for You" ,AlbomId = 4,Duration = new(0,5,12)},
-            new Treck(){ Id = 20,ArtisId = 4, Name = "Besame Mucho",AlbomId = 4,Duration = new(0,4,45)},
+            new Treck(){ /*Id = 16,*/ArtistId = 4, Name = "Time to Say Goodbye" ,AlbumId = 4 ,Duration = new(0,4,30)},
+            new Treck(){ /*Id = 17,*/ArtistId = 4, Name = "I Live for Her" ,AlbumId = 4,Duration = new(0,5,23)},
+            new Treck(){ /*Id = 18,*/ArtistId = 4, Name = "The Prayer" ,AlbumId = 4,Duration = new(0,6,3)},
+            new Treck(){ /*Id = 19,*/ArtistId = 4, Name = "I Will Fly for You" ,AlbumId = 4,Duration = new(0,5,12)},
+            new Treck(){ /*Id = 20,*/ArtistId = 4, Name = "Besame Mucho",AlbumId = 4,Duration = new(0,4,45)},
 
-            new Treck(){ Id = 21,ArtisId = 5, Name = "Nocturne in E-flat Major" ,AlbomId = 5 ,Duration = new(0,4,0)},
-            new Treck(){ Id = 22,ArtisId = 5, Name = "Ballade No. 1 in G minor" ,AlbomId = 5,Duration = new(0,3,25)},
-            new Treck(){ Id = 23,ArtisId = 5, Name = "Prelude in D-flat Major" ,AlbomId = 5,Duration = new(0,5,32)},
-            new Treck(){ Id = 24,ArtisId = 5, Name = "Waltz in C-sharp minor," ,AlbomId = 5,Duration = new(0,4,38)},
-            new Treck(){ Id = 25,ArtisId = 5, Name = "Polonaise in A-flat Major",AlbomId = 5,Duration = new(0,4,25)},
+            new Treck(){ /*Id = 21,*/ArtistId = 5, Name = "Nocturne in E-flat Major" ,AlbumId = 5 ,Duration = new(0,4,0)},
+            new Treck(){ /*Id = 22,*/ArtistId = 5, Name = "Ballade No. 1 in G minor" ,AlbumId = 5,Duration = new(0,3,25)},
+            new Treck(){ /*Id = 23,*/ArtistId = 5, Name = "Prelude in D-flat Major" ,AlbumId = 5,Duration = new(0,5,32)},
+            new Treck(){ /*Id = 24,*/ArtistId = 5, Name = "Waltz in C-sharp minor," ,AlbumId = 5,Duration = new(0,4,38)},
+            new Treck(){ /*Id = 25,*/ArtistId = 5, Name = "Polonaise in A-flat Major",AlbumId = 5,Duration = new(0,4,25)},
 
-            new Treck(){ Id = 26,ArtisId = 6, Name = "Nocturne in E-flat Major" ,AlbomId = 6 ,Duration = new(0,4,10)},
-            new Treck(){ Id = 27,ArtisId = 6, Name = "Ballade No. 1 in G minor" ,AlbomId = 6,Duration = new(0,4,25)},
-            new Treck(){ Id = 28,ArtisId = 6, Name = "Prelude in D-flat Major" ,AlbomId = 6,Duration = new(0,6,32)},
-            new Treck(){ Id = 29,ArtisId = 6, Name = "Waltz in C-sharp minor" ,AlbomId = 6,Duration = new(0,5,30)},
-            new Treck(){ Id = 30,ArtisId = 6, Name = "Polonaise in A-flat Major",AlbomId = 6,Duration = new(0,5,25)},
+            new Treck(){ /*Id = 26,*/ArtistId = 6, Name = "Nocturne in E-flat Major" ,AlbumId = 6 ,Duration = new(0,4,10)},
+            new Treck(){ /*Id = 27,*/ArtistId = 6, Name = "Ballade No. 1 in G minor" ,AlbumId = 6,Duration = new(0,4,25)},
+            new Treck(){ /*Id = 28,*/ArtistId = 6, Name = "Prelude in D-flat Major" ,AlbumId = 6,Duration = new(0,6,32)},
+            new Treck(){ /*Id = 29,*/ArtistId = 6, Name = "Waltz in C-sharp minor" ,AlbumId = 6,Duration = new(0,5,30)},
+            new Treck(){ /*Id = 30,*/ArtistId = 6, Name = "Polonaise in A-flat Major",AlbumId = 6,Duration = new(0,5,25)},
 
-            new Treck(){ Id = 31,ArtisId = 7, Name = "Blue and White Porcelain" ,AlbomId = 7 ,Duration = new(0,3,50)},
-            new Treck(){ Id = 32,ArtisId = 7, Name = "Fragrant Rice" ,AlbomId = 7,Duration = new(0,4,30)},
-            new Treck(){ Id = 33,ArtisId = 7, Name = "Clear Day" ,AlbomId = 7,Duration = new(0,5,32)},
-            new Treck(){ Id = 34,ArtisId = 7, Name = "Jasmine Fragrance" ,AlbomId = 7,Duration = new(0,4,30)},
-            new Treck(){ Id = 35,ArtisId = 7, Name = "Nocturne",AlbomId = 7,Duration = new(0,3,25)},
+            new Treck(){ /*Id = 31,*/ArtistId = 7, Name = "Blue and White Porcelain" ,AlbumId = 7 ,Duration = new(0,3,50)},
+            new Treck(){ /*Id = 32,*/ArtistId = 7, Name = "Fragrant Rice" ,AlbumId = 7,Duration = new(0,4,30)},
+            new Treck(){ /*Id = 33,*/ArtistId = 7, Name = "Clear Day" ,AlbumId = 7,Duration = new(0,5,32)},
+            new Treck(){ /*Id = 34,*/ArtistId = 7, Name = "Jasmine Fragrance" ,AlbumId = 7,Duration = new(0,4,30)},
+            new Treck(){ /*Id = 35,*/ArtistId = 7, Name = "Nocturne",AlbumId = 7,Duration = new(0,3,25)},
 
         };
 
         public readonly static Album[] AlbomsData =
         {
-
+            new Album(){ Id = 1,Name = "Wild Energy",ArtistId = 1,GenreId = 1,Year = 2008},
+            new Album(){ Id = 2,Name = "The Freddie Mercury Album",ArtistId = 2,GenreId = 1,Year = 1992},
+            new Album(){ Id = 3,Name = "Mutter",ArtistId = 3,GenreId = 1,Year = 2001},
+            new Album(){ Id = 4,Name = "Amore",ArtistId = 4,GenreId = 1,Year = 2006},
+            new Album(){ Id = 5,Name = "The Complete Nocturnes",ArtistId = 5,GenreId = 1,Year = 2001},
+            new Album(){ Id = 6,Name = "Chansons Parisiennes",ArtistId = 6,GenreId = 1,Year = 1954},
+            new Album(){ Id = 7,Name = "Fantasy",ArtistId = 7,GenreId = 1,Year = 2001},
         };
 
         public readonly static PlayList[] PlayListsData =
         {
+            new PlayList(){ Id = 1,Name = "Music for soul",CategoryId = 1 },
+            new PlayList(){ Id = 2,Name = "Music in auto",CategoryId = 2},
+            new PlayList(){ Id = 3,Name = "Danсing", CategoryId = 3},
 
         };
+
+       
     }
 }

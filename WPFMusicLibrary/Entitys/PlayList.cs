@@ -12,10 +12,10 @@ namespace WPFMusicLibrary.Entitys
 
         public string Name { get; set; }
 
-        public int CategorieId { get; set; }
+        public int CategoryId { get; set; }
 
         public Category Category { get; set; }
 
-        public ICollection<Treck> Trecks { get; set; }
+        public ICollection<Treck> Trecks { get; set; } = new HashSet<Treck>();
     }
 }

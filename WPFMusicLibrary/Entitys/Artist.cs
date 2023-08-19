@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,8 @@ namespace WPFMusicLibrary.Entitys
         public Countrie Countrie { get; set; }
 
         public ICollection<Treck> Trecks { get; set; } = new HashSet<Treck>();
+
+        public ICollection<Album> Albums { get; set; } = new HashSet<Album>();
 
     }
 }
