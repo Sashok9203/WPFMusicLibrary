@@ -106,20 +106,20 @@ namespace WPFMusicLibrary.Data
 
         public readonly static Album[] AlbomsData =
         {
-            new Album(){ Id = 1,Name = "Wild Energy",ArtistId = 1,GenreId = 1,Year = 2008, ImagePath  = System.IO.Path.Combine("Images","RLWE.jpg")},
-            new Album(){ Id = 2,Name = "The Freddie Mercury Album",ArtistId = 2,GenreId = 1,Year = 1992 ,ImagePath  = System.IO.Path.Combine("Images","TheFMalbum.jpg")},
-            new Album(){ Id = 3,Name = "Mutter",ArtistId = 3,GenreId = 1,Year = 2001 ,ImagePath  = System.IO.Path.Combine("Images","RMAlbum.jpg")},
-            new Album(){ Id = 4,Name = "Amore",ArtistId = 4,GenreId = 1,Year = 2006,ImagePath  = System.IO.Path.Combine("Images","ABAlbum.jpg")},
-            new Album(){ Id = 5,Name = "The Complete Nocturnes",ArtistId = 5,GenreId = 1,Year = 2001,ImagePath  = System.IO.Path.Combine("Images","TCNAlbum.png")},
-            new Album(){ Id = 6,Name = "Chansons Parisiennes",ArtistId = 6,GenreId = 1,Year = 1954,ImagePath  = System.IO.Path.Combine("Images","EPAlbum.png")},
-            new Album(){ Id = 7,Name = "Fantasy",ArtistId = 7,GenreId = 1,Year = 2001 ,ImagePath  = System.IO.Path.Combine("Images","JCFantasy.jpg")},
+            new Album(){ Id = 1,Name = "Wild Energy",ArtistId = 1,GenreId = 1,Year = 2008, ImagePath  = System.IO.Path.Combine("Images","Albums","RLWE.jpg")},
+            new Album(){ Id = 2,Name = "The Freddie Mercury Album",ArtistId = 2,GenreId = 1,Year = 1992 ,ImagePath  = System.IO.Path.Combine("Images","Albums","TheFMalbum.jpg")},
+            new Album(){ Id = 3,Name = "Mutter",ArtistId = 3,GenreId = 1,Year = 2001 ,ImagePath  = System.IO.Path.Combine("Images","Albums","RMAlbum.jpg")},
+            new Album(){ Id = 4,Name = "Amore",ArtistId = 4,GenreId = 1,Year = 2006,ImagePath  = System.IO.Path.Combine("Images","Albums","ABAlbum.jpg")},
+            new Album(){ Id = 5,Name = "The Complete Nocturnes",ArtistId = 5,GenreId = 1,Year = 2001,ImagePath  = System.IO.Path.Combine("Images","Albums","TCNAlbum.png")},
+            new Album(){ Id = 6,Name = "Chansons Parisiennes",ArtistId = 6,GenreId = 1,Year = 1954,ImagePath  = System.IO.Path.Combine("Images","Albums","EPAlbum.png")},
+            new Album(){ Id = 7,Name = "Fantasy",ArtistId = 7,GenreId = 1,Year = 2001 ,ImagePath  = System.IO.Path.Combine("Images","Albums","JCFantasy.jpg")},
         };
 
         public readonly static PlayList[] PlayListsData =
         {
-            new PlayList(){ Id = 1,Name = "Music for soul",CategoryId = 1 ,ImagePath  = System.IO.Path.Combine("Images","JCFantasy.jpg")},
-            new PlayList(){ Id = 2,Name = "Music in auto",CategoryId = 2,ImagePath  = System.IO.Path.Combine("Images","JCFantasy.jpg")},
-            new PlayList(){ Id = 3,Name = "Danсing", CategoryId = 3,ImagePath  = System.IO.Path.Combine("Images","JCFantasy.jpg")},
+            new PlayList(){ Id = 1,Name = "Music for soul",CategoryId = 1 ,ImagePath  = System.IO.Path.Combine("Images","PlayLists","PL.png")},
+            new PlayList(){ Id = 2,Name = "Music in auto",CategoryId = 2,ImagePath  = System.IO.Path.Combine("Images","PlayLists","PL2.jpg")},
+            new PlayList(){ Id = 3,Name = "Danсing", CategoryId = 3,ImagePath  = System.IO.Path.Combine("Images","PlayLists","PL.png")},
 
         };
 

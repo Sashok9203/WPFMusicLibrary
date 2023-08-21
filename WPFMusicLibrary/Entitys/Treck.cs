@@ -13,13 +13,13 @@ namespace WPFMusicLibrary.Entitys
 
         public string Name { get; set; }
 
-        public int AlbumId { get; set; }
+        public int? AlbumId { get; set; }
 
-        public Album Album { get; set; }
+        public Album? Album { get; set; }
 
         public int? ArtistId { get; set; }
 
-        public Artist Artist { get; set; }
+        public Artist? Artist { get; set; }
 
         public TimeSpan Duration { get; set; }
 

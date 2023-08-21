@@ -18,7 +18,7 @@ namespace WPFMusicLibrary.Data
     {
 
         public RelayCommand DeleteAlbum  { get; private set; } 
-        public RelayCommand ShowAlbumTrecks { get; private set; }
+        public RelayCommand ShowTreckList { get; private set; }
 
         public MusicDBContext()
         {
@@ -36,7 +36,7 @@ namespace WPFMusicLibrary.Data
             }
 
             DeleteAlbum = new ((o) => delAlbum(o));
-            ShowAlbumTrecks  = new((o) => showTrecks(o));
+            ShowTreckList  = new((o) => showTrecks(o));
         }
 
        
@@ -62,15 +62,41 @@ namespace WPFMusicLibrary.Data
 
         private void delAlbum(object o)
         {
-            Albums.Remove(o as Album);
-            SaveChanges();
-            OnPropertyChanged("AlbomsView");
+            switch (o)
+            {
+                case Album album:
+                    Albums.Remove(album);
+                    SaveChanges();
+                    OnPropertyChanged("AlbomsView");
+                    OnPropertyChanged("TrecksView");
+                    break;
+                case PlayList playList:
+                    PlayLists.Remove(playList);
+                    SaveChanges();
+                    OnPropertyChanged("PlayListsView");
+                    break;
+                default:
+                    return;
+               
+            }
         }
 
         private void showTrecks(object o)
         {
-            AlbomTreks = TrecksView.Where(x=>x.AlbumId == (int)o).ToArray();
-            OnPropertyChanged("AlbomTreks");
+            switch (o)
+            {
+                case Album album:
+                    TreckList = TrecksView.Where(x => x.AlbumId == album.Id).ToArray();
+                    break;
+                case PlayList playList:
+                    TreckList = TrecksView.Where(x => x.PlayLists.Contains(playList)).ToArray();
+                    break;
+                default:
+                    return;
+
+            }
+
+            OnPropertyChanged("TreckList");
         }
 
         public DbSet<Category> Categorys { get; set; }
@@ -81,13 +107,10 @@ namespace WPFMusicLibrary.Data
         public DbSet<Treck> Trecks { get; set; }
         public DbSet<PlayList> PlayLists { get; set; }
 
-        public IEnumerable<Treck>  TrecksView => Trecks.Include(x => x.Artist).ToList();
-
+        public IEnumerable<Treck>  TrecksView => Trecks.Include(x => x.Artist).ToArray();
         public IEnumerable<Album>  AlbomsView => Albums.Include(x => x.Genre).Include(x => x.Artist).ToArray();
-
-       
-        public IEnumerable<Treck>? AlbomTreks { get; set; }
-
+        public IEnumerable<Treck>? TreckList { get; set; }
+        public IEnumerable<PlayList> PlayListsView => PlayLists.Include(x=>x.Category).ToArray();
 
 
         public event PropertyChangedEventHandler? PropertyChanged;

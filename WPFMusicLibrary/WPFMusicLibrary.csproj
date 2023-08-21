@@ -9,8 +9,18 @@
 
   <ItemGroup>
     <None Remove="Images\ABAlbum.jpg" />
+    <None Remove="Images\Albums\ABAlbum.jpg" />
+    <None Remove="Images\Albums\EPAlbum.png" />
+    <None Remove="Images\Albums\JCFantasy.jpg" />
+    <None Remove="Images\Albums\RLWE.jpg" />
+    <None Remove="Images\Albums\RMAlbum.jpg" />
+    <None Remove="Images\Albums\TCNAlbum.png" />
+    <None Remove="Images\Albums\TheFMalbum.jpg" />
     <None Remove="Images\EPAlbum.png" />
     <None Remove="Images\JCFantasy.jpg" />
+    <None Remove="Images\PL.png" />
+    <None Remove="Images\PlayLists\PL.png" />
+    <None Remove="Images\PlayLists\PL2.jpg" />
     <None Remove="Images\RLWE.jpg" />
     <None Remove="Images\RMAlbum.jpg" />
     <None Remove="Images\TCNAlbum.png" />
@@ -26,13 +36,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\ABAlbum.jpg" />
-    <Resource Include="Images\EPAlbum.png" />
-    <Resource Include="Images\JCFantasy.jpg" />
-    <Resource Include="Images\RLWE.jpg" />
-    <Resource Include="Images\RMAlbum.jpg" />
-    <Resource Include="Images\TCNAlbum.png" />
-    <Resource Include="Images\TheFMalbum.jpg" />
+    <Resource Include="Images\Albums\ABAlbum.jpg" />
+    <Resource Include="Images\Albums\EPAlbum.png" />
+    <Resource Include="Images\Albums\JCFantasy.jpg" />
+    <Resource Include="Images\Albums\RLWE.jpg" />
+    <Resource Include="Images\Albums\RMAlbum.jpg" />
+    <Resource Include="Images\Albums\TCNAlbum.png" />
+    <Resource Include="Images\Albums\TheFMalbum.jpg" />
+    <Resource Include="Images\PlayLists\PL.png" />
+    <Resource Include="Images\PlayLists\PL2.jpg" />
   </ItemGroup>
 
 </Project>
