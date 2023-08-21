@@ -8,11 +8,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\ABAlbum.jpg" />
+    <None Remove="Images\EPAlbum.png" />
+    <None Remove="Images\JCFantasy.jpg" />
+    <None Remove="Images\RLWE.jpg" />
+    <None Remove="Images\RMAlbum.jpg" />
+    <None Remove="Images\TCNAlbum.png" />
+    <None Remove="Images\TheFMalbum.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.10">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\ABAlbum.jpg" />
+    <Resource Include="Images\EPAlbum.png" />
+    <Resource Include="Images\JCFantasy.jpg" />
+    <Resource Include="Images\RLWE.jpg" />
+    <Resource Include="Images\RMAlbum.jpg" />
+    <Resource Include="Images\TCNAlbum.png" />
+    <Resource Include="Images\TheFMalbum.jpg" />
   </ItemGroup>
 
 </Project>

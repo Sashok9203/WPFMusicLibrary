@@ -7,29 +7,22 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using WPFMusicLibrary.Entitys;
+using RCommand;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace WPFMusicLibrary.Data
 {
-    public class TR
+    
+    public class MusicDBContext :DbContext,INotifyPropertyChanged
     {
-        public string Artist { get; set; }
-        public string Track { get; set; }
-        public TimeSpan Duration { get; set; }
-        public TR(string tName, string aName,  TimeSpan dur)
-        {
-            Track = tName;
-            Artist = aName;
-            Duration = dur;
-        }
-    }
 
-    public class MusicDBContext :DbContext
-    {
-        
-        IEnumerable<TR> test;
+        public RelayCommand DeleteAlbum  { get; private set; } 
+        public RelayCommand ShowAlbumTrecks { get; private set; }
+
         public MusicDBContext()
         {
-          //  Database.EnsureDeleted();
+            Database.EnsureDeleted();
             if (Database.EnsureCreated())
             {
                 Trecks.AddRange(MDBData.TrecksData);
@@ -41,8 +34,9 @@ namespace WPFMusicLibrary.Data
                 }
                 SaveChanges();
             }
-            test = Trecks.Select(n=> new TR(n.Name,n.Artist.Name + " " + n.Artist.Surname,n.Duration )).ToArray();
 
+            DeleteAlbum = new ((o) => delAlbum(o));
+            ShowAlbumTrecks  = new((o) => showTrecks(o));
         }
 
        
@@ -65,16 +59,38 @@ namespace WPFMusicLibrary.Data
             modelBuilder.Entity<PlayList>().HasData(MDBData.PlayListsData);
         }
 
+
+        private void delAlbum(object o)
+        {
+            Albums.Remove(o as Album);
+            SaveChanges();
+            OnPropertyChanged("AlbomsView");
+        }
+
+        private void showTrecks(object o)
+        {
+            AlbomTreks = TrecksView.Where(x=>x.AlbumId == (int)o).ToArray();
+            OnPropertyChanged("AlbomTreks");
+        }
+
         public DbSet<Category> Categorys { get; set; }
         public DbSet<Countrie> Countries { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Artist> Artists { get; set; }
-        public DbSet<Album> Alboms { get; set; }
+        public DbSet<Album> Albums { get; set; }
         public DbSet<Treck> Trecks { get; set; }
         public DbSet<PlayList> PlayLists { get; set; }
 
-        public IEnumerable<TR>  TrecksView => test;
+        public IEnumerable<Treck>  TrecksView => Trecks.Include(x => x.Artist).ToList();
+
+        public IEnumerable<Album>  AlbomsView => Albums.Include(x => x.Genre).Include(x => x.Artist).ToArray();
+
+       
+        public IEnumerable<Treck>? AlbomTreks { get; set; }
 
 
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string prop = "") => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
     }
 }

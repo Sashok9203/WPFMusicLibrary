@@ -16,6 +16,8 @@ namespace WPFMusicLibrary.Entitys
 
         public Category Category { get; set; }
 
+        public string ImagePath { get; set; }
+
         public ICollection<Treck> Trecks { get; set; } = new HashSet<Treck>();
     }
 }
