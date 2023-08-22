@@ -28,6 +28,7 @@ namespace WPFMusicLibrary.Models
         private readonly List<PlayList> playListsView;
 
         private readonly List<Category> categoriesView;
+
         private bool disposedValue;
 
         private void getImagePath()
@@ -146,14 +147,11 @@ namespace WPFMusicLibrary.Models
         public RelayCommand SavePlayList { get; private set; }
         public RelayCommand GetImagePath { get; private set; }
 
-        
-
         public IEnumerable<Treck> TrecksView => trecksView;
         public IEnumerable<Album> AlbomsView => albomsView.ToArray();
         public IEnumerable<Treck>? TreckList { get; set; }
         public IEnumerable<PlayList> PlayListsView => playListsView.ToArray();
         public IEnumerable<Category> CategoriesView => categoriesView;
-
 
         public event PropertyChangedEventHandler? PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "") => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
@@ -173,7 +171,6 @@ namespace WPFMusicLibrary.Models
                 disposedValue = true;
             }
         }
-
         
         public void Dispose()
         {
