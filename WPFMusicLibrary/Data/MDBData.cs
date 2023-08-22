@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.IO;
-
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows.Shapes;
-using WPFMusicLibrary.Entitys;
+﻿using WPFMusicLibrary.Entitys;
 
 namespace WPFMusicLibrary.Data
 {
-    public static  class MDBData
+    public static class MDBData
     {
         public readonly static Countrie[] CountriesData =
         {
@@ -122,7 +112,6 @@ namespace WPFMusicLibrary.Data
             new PlayList(){ Id = 3,Name = "Danсing", CategoryId = 3,ImagePath  = System.IO.Path.Combine("Images","PlayLists","PL.png")},
 
         };
-
-       
+     
     }
 }
