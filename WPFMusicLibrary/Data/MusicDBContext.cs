@@ -9,7 +9,7 @@ namespace WPFMusicLibrary.Data
     {
         public MusicDBContext()
         {
-            Database.EnsureDeleted();
+            //Database.EnsureDeleted();
             if (Database.EnsureCreated())
             {
                 Trecks?.AddRange(MDBData.TrecksData);
