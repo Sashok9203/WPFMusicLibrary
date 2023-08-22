@@ -38,13 +38,13 @@ namespace WPFMusicLibrary.Data
 
         public readonly static Category[] CategorysData =
         {
-            new Category(){ Id = 1,Name = "Studio Album" },
+            new Category(){ Id = 1,Name = "Studio" },
             new Category(){ Id = 2,Name = "Live Recording" },
             new Category(){ Id = 3,Name = "Greatest Hits Compilation" },
-            new Category(){ Id = 4,Name = "Concept Album" },
-            new Category(){ Id = 5,Name = "Acoustic Album" },
-            new Category(){ Id = 6,Name = "Remix Album" },
-            new Category(){ Id = 7,Name = "Debut Album" },
+            new Category(){ Id = 4,Name = "Concept" },
+            new Category(){ Id = 5,Name = "Acoustic" },
+            new Category(){ Id = 6,Name = "Remix" },
+            new Category(){ Id = 7,Name = "Debut" },
         };
 
         public readonly static Artist[] ArtistsData =

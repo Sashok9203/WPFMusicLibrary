@@ -10,15 +10,24 @@ using WPFMusicLibrary.Entitys;
 using RCommand;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Collections;
 
 namespace WPFMusicLibrary.Data
 {
-    
-    public class MusicDBContext :DbContext,INotifyPropertyChanged
+
+    public class MusicDBContext : DbContext, INotifyPropertyChanged
     {
 
-        public RelayCommand DeleteAlbum  { get; private set; } 
+        public RelayCommand DeleteAlbum { get; private set; }
         public RelayCommand ShowTreckList { get; private set; }
+        public RelayCommand AddPlayList { get; private set; }
+        public RelayCommand SavePlayList { get; private set; }
+
+        public string NewPLName { get; set; }
+        public Category NewCategory { get; set; }
+        public string? NewImagePath { get; set; }
+
+
 
         public MusicDBContext()
         {
@@ -30,16 +39,22 @@ namespace WPFMusicLibrary.Data
                 {
                     for (int i = 0; i < 15; i++)
                         item.Trecks.Add(MDBData.TrecksData[new Random().Next(0, 34)]);
-
                 }
                 SaveChanges();
             }
 
-            DeleteAlbum = new ((o) => delAlbum(o));
-            ShowTreckList  = new((o) => showTrecks(o));
+            DeleteAlbum = new((o) => delAlbum(o));
+            ShowTreckList = new((o) => showTrecks(o));
+            AddPlayList = new((o) => addPlayList());
+            SavePlayList = new((o) => savePlayList(o), (o) => !String.IsNullOrEmpty(NewPLName) && isNameUnique(NewPLName));
         }
 
-       
+        private bool isNameUnique( string name)
+        {
+            foreach (var item in PlayListsView)
+                if (item.Name == name) return false;
+            return true;
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -59,6 +74,25 @@ namespace WPFMusicLibrary.Data
             modelBuilder.Entity<PlayList>().HasData(MDBData.PlayListsData);
         }
 
+        private void addPlayList()
+        {
+            PlayListAddWindow playListAddWindow = new(){ DataContext = this,};
+            playListAddWindow.ShowDialog();
+        }
+
+        private void savePlayList(object o)
+        {
+            PlayList pl = new()
+            {
+                ImagePath = String.IsNullOrEmpty(NewImagePath) ? System.IO.Path.Combine("Images", "PlayLists", "PL.png") : NewImagePath,
+                Category = NewCategory,
+                Name = NewPLName,
+            };
+            foreach (Treck item in (IList) o) pl.Trecks.Add(item);
+            PlayLists.Add(pl);
+            SaveChanges();
+            OnPropertyChanged("PlayListsView");
+        }
 
         private void delAlbum(object o)
         {
@@ -77,7 +111,6 @@ namespace WPFMusicLibrary.Data
                     break;
                 default:
                     return;
-               
             }
         }
 
@@ -93,24 +126,23 @@ namespace WPFMusicLibrary.Data
                     break;
                 default:
                     return;
-
             }
-
             OnPropertyChanged("TreckList");
         }
 
-        public DbSet<Category> Categorys { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public DbSet<Countrie> Countries { get; set; }
-        public DbSet<Genre> Genres { get; set; }
-        public DbSet<Artist> Artists { get; set; }
-        public DbSet<Album> Albums { get; set; }
-        public DbSet<Treck> Trecks { get; set; }
+        public DbSet<Genre>    Genres { get; set; }
+        public DbSet<Artist>   Artists { get; set; }
+        public DbSet<Album>    Albums { get; set; }
+        public DbSet<Treck>    Trecks { get; set; }
         public DbSet<PlayList> PlayLists { get; set; }
 
-        public IEnumerable<Treck>  TrecksView => Trecks.Include(x => x.Artist).ToArray();
-        public IEnumerable<Album>  AlbomsView => Albums.Include(x => x.Genre).Include(x => x.Artist).ToArray();
-        public IEnumerable<Treck>? TreckList { get; set; }
-        public IEnumerable<PlayList> PlayListsView => PlayLists.Include(x=>x.Category).ToArray();
+        public IEnumerable<Treck>    TrecksView => Trecks.Include(x => x.Artist).ToArray();
+        public IEnumerable<Album>    AlbomsView => Albums.Include(x => x.Genre).Include(x => x.Artist).ToArray();
+        public IEnumerable<Treck>?   TreckList { get; set; }
+        public IEnumerable<PlayList> PlayListsView  => PlayLists.Include(x=>x.Category).ToArray();
+        public IEnumerable<Category> CategoriesView => Categories.ToArray();
 
 
         public event PropertyChangedEventHandler? PropertyChanged;

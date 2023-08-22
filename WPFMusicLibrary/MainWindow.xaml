@@ -55,75 +55,62 @@
     </Window.DataContext>
     <TabControl>
         <TabItem Header="Trecks">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="50"/>
-                </Grid.RowDefinitions>
-                <DataGrid Grid.Row="0" ItemsSource="{Binding Path=TrecksView}" AutoGenerateColumns="False">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Artist name" Binding="{Binding Artist.FullName}" Width="*" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="Treck name" Binding="{Binding Name}" Width="*" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="Duration" Binding="{Binding Duration}" Width="*" IsReadOnly="True"/>
-                    </DataGrid.Columns>
-                </DataGrid>
-                <Button Grid.Row="1" Content="Add Artist" Width="60" Margin="5" HorizontalAlignment="Right"/>
-            </Grid>
+            <DataGrid  ItemsSource="{Binding Path=TrecksView}" AutoGenerateColumns="False" Margin="5">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Artist name" Binding="{Binding Artist.FullName}" Width="*" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Treck name" Binding="{Binding Name}" Width="*" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Duration" Binding="{Binding Duration}" Width="*" IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </TabItem>
         <TabItem Header="Albums">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="50"/>
-                </Grid.RowDefinitions>
-                <ListView ItemsSource="{Binding Path = AlbomsView}" HorizontalContentAlignment="Stretch" >
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                             <Grid  >
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="80" />
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="80"/>
-                                </Grid.RowDefinitions>
-                                <Border Grid.ColumnSpan="2"  CornerRadius ="4" Padding="3" Background="#FFD0CFCF" BorderThickness="1" BorderBrush="#FF4E4E4E" >
-                                    <DockPanel>
-                                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
-                                            <Image Width="80" Height="80" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Source="{Binding Path=ImagePath}"/>
-                                            <StackPanel Orientation="Vertical" Grid.Column="1" Margin="5" >
-                                                <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
-                                                    <TextBlock  Text="Album name : " FontSize="12" FontWeight="DemiBold"/>
-                                                    <TextBlock Text="{Binding Name}"/>
-                                                </StackPanel>
-                                                <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
-                                                    <TextBlock  Text="Artist : " FontSize="12" FontWeight="DemiBold"/>
-                                                    <TextBlock Text="{Binding  Artist.FullName}"/>
-                                                </StackPanel>
-                                                <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
-                                                    <TextBlock  Text="Genre : " FontSize="12" FontWeight="DemiBold"/>
-                                                    <TextBlock Text="{Binding  Genre.Name}"/>
-                                                </StackPanel>
-                                                <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
-                                                    <TextBlock  Text="Year : " FontSize="12" FontWeight="DemiBold"/>
-                                                    <TextBlock Text="{Binding  Year}"/>
-                                                </StackPanel>
+            <ListView ItemsSource="{Binding Path = AlbomsView}" HorizontalContentAlignment="Stretch" Margin="5" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                            <Grid  >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="80"/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.ColumnSpan="2"  CornerRadius ="4" Padding="3" Background="#FFD0CFCF" BorderThickness="1" BorderBrush="#FF4E4E4E" >
+                                <DockPanel>
+                                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                                        <Image Width="80" Height="80" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Source="{Binding Path=ImagePath}"/>
+                                        <StackPanel Orientation="Vertical" Grid.Column="1" Margin="5" >
+                                            <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
+                                                <TextBlock  Text="Album name : " FontSize="12" FontWeight="DemiBold"/>
+                                                <TextBlock Text="{Binding Name}"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
+                                                <TextBlock  Text="Artist : " FontSize="12" FontWeight="DemiBold"/>
+                                                <TextBlock Text="{Binding  Artist.FullName}"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
+                                                <TextBlock  Text="Genre : " FontSize="12" FontWeight="DemiBold"/>
+                                                <TextBlock Text="{Binding  Genre.Name}"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
+                                                <TextBlock  Text="Year : " FontSize="12" FontWeight="DemiBold"/>
+                                                <TextBlock Text="{Binding  Year}"/>
                                             </StackPanel>
                                         </StackPanel>
-                                        <ToggleButton Style="{StaticResource ResourceKey=tBotton}"  Name="plButton"/>
-                                        <Popup Style="{StaticResource ResourceKey=popupStyle}">
-                                            <ListView Style="{StaticResource ResourceKey=popupListViev}" />
-                                        </Popup>
-                                        <Button  Style="{StaticResource ResourceKey=delBotton}"/>
+                                    </StackPanel>
+                                    <ToggleButton Style="{StaticResource ResourceKey=tBotton}"  Name="plButton"/>
+                                    <Popup Style="{StaticResource ResourceKey=popupStyle}">
+                                        <ListView Style="{StaticResource ResourceKey=popupListViev}" />
+                                    </Popup>
+                                    <Button  Style="{StaticResource ResourceKey=delBotton}"/>
                                         
-                                    </DockPanel>
-                                </Border>
-                            </Grid>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                <Button Grid.Row="1" Content="Add Album" Margin="5" HorizontalAlignment="Right"/>
-            </Grid>
+                                </DockPanel>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+           
         </TabItem>
         
 
@@ -172,7 +159,7 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Button Grid.Row="1" Content="Add Album" Margin="5" HorizontalAlignment="Right"/>
+                <Button Grid.Row="1" Content="Add Play List" Margin="5" HorizontalAlignment="Stretch" Command="{Binding AddPlayList}"/>
             </Grid>
         </TabItem>
     </TabControl>
